@@ -1,0 +1,11 @@
+<header>
+  <h1>Users data</h1>
+</header>
+<section>
+  <ul>
+    <li ng-repeat="user in $ctrl.users">
+      <h4>{{user.first_name}} {{user.last_name}}</h4>
+      <h5>{{user.email}}</h5>
+    </li>
+  </ul>
+</section>
