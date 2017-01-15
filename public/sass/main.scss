@@ -1,27 +1,6 @@
 @import './vars.scss';
 
 body {
-    font: 100% Helvetica, sans-serif;
-    background-color: $midnight_blue;
-    color: $clouds;
-}
-
-.root-header{
-    padding: 5%;
-    background-color: $midnight_blue;
-    color: $clouds;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.root-container{
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 5%;
-    background-color: $clouds;
-    color: $midnight_blue;
-}
-
-.panel{
-    padding: 10%;
+  font: 100% Helvetica, sans-serif;
+  color: $clouds;
 }
