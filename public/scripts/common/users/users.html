@@ -1,14 +1,32 @@
 <header>
   <h1>Users data</h1>
 </header>
+
+<form class="form-inline">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search" ng-model="search.fullname">
+  </div>
+  <div>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="" ng-model="search.gender"> all
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="Male" ng-model="search.gender"> man only
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="Female" ng-model="search.gender"> woman only
+    </label>
+  </div>
+</form>
+
 <section>
   <ul class="row">
-    <li ng-repeat="user in $ctrl.users">
+    <li ng-repeat="user in $ctrl.users | filter:search">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img ng-src="{{user.avatar}}" alt="{{user.first_name}} {{user.last_name}}">
           <div class="caption">
-            <h3>{{user.first_name}} {{user.last_name}}</h3>
+            <h3>{{user.fullname}}</h3>
             <h5>{{user.email}}</h5>
             <blockquote>{{user.slogan}}</blockquote>
           </div>
