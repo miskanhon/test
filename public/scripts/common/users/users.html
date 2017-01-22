@@ -6,11 +6,22 @@
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Search" ng-model="search.fullname">
   </div>
+  <div>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="" ng-model="$ctrl.search.gender"> All
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="Male" ng-model="$ctrl.search.gender"> Male
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="Female" ng-model="$ctrl.search.gender"> Female
+    </label>
+  </div>
 </form>
 
 <section>
   <ul class="row">
-    <li ng-repeat="user in $ctrl.users | filter:search">
+    <li ng-repeat="user in $ctrl.users | filter:search | byGender:$ctrl.search.gender">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img ng-src="{{user.avatar}}" alt="{{user.first_name}} {{user.last_name}}">
